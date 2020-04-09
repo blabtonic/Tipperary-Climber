@@ -1,8 +1,12 @@
 extends KinematicBody2D
 
+const UP = Vector2(0,-1)
+const GRAVITY = 30
+const SPEED = 120
+const JUMP_HEIGHT = -600
+
 var motion = Vector2()
 
-var speed = 2 * 60
 
 func _physics_process(delta):
 	#Gravity
@@ -15,5 +19,9 @@ func _physics_process(delta):
 		motion.x = -100
 	else:
 		motion.x = 0
+	# Jump added
+	if is_on_floor():
+		if Input.is_action_just_pressed('ui_up'):
+			motion.y = -300
 	
-	move_and_slide(motion)
+	motion = move_and_slide(motion, UP)
