@@ -58,6 +58,7 @@ shape = SubResource( 2 )
 
 [node name="JumpSound" type="AudioStreamPlayer2D" parent="Player"]
 stream = ExtResource( 8 )
+volume_db = -14.99
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource( 3 )
