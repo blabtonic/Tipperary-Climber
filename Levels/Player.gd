@@ -16,14 +16,19 @@ func _physics_process(delta):
 	if Input.is_action_pressed('ui_right'):
 		motion.x = 100
 		$Sprite.flip_h = false
+		$Sprite.play('Run')
 	elif Input.is_action_pressed('ui_left'):
 		motion.x = -100
 		$Sprite.flip_h = true
+		$Sprite.play('Run')
 	else:
 		motion.x = 0
+		$Sprite.play('Idle')
 	# Jump added
 	if is_on_floor():
 		if Input.is_action_just_pressed('ui_up'):
 			motion.y = -300
+	else:
+		$Sprite.play('Jump')
 	
 	motion = move_and_slide(motion, UP)
