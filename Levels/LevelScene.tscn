@@ -12,6 +12,16 @@
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
+"frames": [ ExtResource( 1 ) ],
+"loop": true,
+"name": "Idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 9 ), ExtResource( 7 ), ExtResource( 9 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "Run",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 6 ) ],
 "loop": true,
 "name": "Fall",
@@ -20,16 +30,6 @@ animations = [ {
 "frames": [ ExtResource( 4 ) ],
 "loop": true,
 "name": "Jump",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 9 ), ExtResource( 7 ), ExtResource( 9 ), ExtResource( 5 ) ],
-"loop": true,
-"name": "Run",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 1 ) ],
-"loop": true,
-"name": "Idle",
 "speed": 5.0
 } ]
 
@@ -58,7 +58,7 @@ shape = SubResource( 2 )
 
 [node name="JumpSound" type="AudioStreamPlayer2D" parent="Player"]
 stream = ExtResource( 8 )
-volume_db = -14.99
+volume_db = -10.783
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource( 3 )
