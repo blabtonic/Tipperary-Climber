@@ -28,7 +28,6 @@ func _physics_process(delta):
 	else:
 		$Sprite.play('Idle')
 		friction = true
-		motion.x = lerp(motion.x, 0, 0.2)
 	
 	if is_on_floor():
 		if Input.is_action_just_pressed('ui_up'):
@@ -37,7 +36,10 @@ func _physics_process(delta):
 			#Linearly interpolates between two values by a normalized value lerp()
 			motion.x = lerp(motion.x, 0, 0.2) 
 	else:
-		$Sprite.play('Jump')
+		if motion.y < 0:
+			$Sprite.play('Jump')
+		else:
+			$Sprite.play('Fall')
 		if friction == true:
 			motion.x = lerp(motion.x, 0, 0.5)
 	
