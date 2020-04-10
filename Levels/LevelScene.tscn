@@ -11,14 +11,14 @@
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
+"frames": [ ExtResource( 6 ) ],
+"loop": true,
+"name": "Fall",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 9 ), ExtResource( 7 ), ExtResource( 9 ), ExtResource( 5 ) ],
 "loop": true,
 "name": "Run",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 4 ) ],
-"loop": true,
-"name": "Jump",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 1 ) ],
@@ -26,14 +26,15 @@ animations = [ {
 "name": "Idle",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 6 ) ],
+"frames": [ ExtResource( 4 ) ],
 "loop": true,
-"name": "Fall",
+"name": "Jump",
 "speed": 5.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 4.29094, 9.66647 )
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 3.90322
+height = 10.6638
 
 [node name="World" type="Node"]
 
