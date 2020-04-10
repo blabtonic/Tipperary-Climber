@@ -8,16 +8,16 @@
 [ext_resource path="res://Assets/Player/Lucky/0_run.png" type="Texture" id=7]
 [ext_resource path="res://Assets/Player/Lucky/1_idle.png" type="Texture" id=9]
 
-[sub_resource type="SpriteFrames" id=2]
+[sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 4 ) ],
-"loop": true,
-"name": "Jump",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 9 ), ExtResource( 7 ), ExtResource( 9 ), ExtResource( 5 ) ],
 "loop": true,
 "name": "Run",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "Jump",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 1 ) ],
@@ -26,29 +26,30 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 4.79263, 7.6116 )
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 4.29094, 9.66647 )
 
 [node name="World" type="Node"]
 
 [node name="Player" type="KinematicBody2D" parent="."]
-position = Vector2( 110.568, 104.145 )
+position = Vector2( 34.0723, 101.054 )
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="Sprite" type="AnimatedSprite" parent="Player"]
-position = Vector2( 0, 9.53674e-07 )
-scale = Vector2( 0.484354, 0.494133 )
-frames = SubResource( 2 )
+position = Vector2( 1.90261, -2.61609 )
+scale = Vector2( 0.630709, 0.657639 )
+frames = SubResource( 1 )
 animation = "Idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
-shape = SubResource( 1 )
+position = Vector2( 2.01653, -1.9888 )
+shape = SubResource( 2 )
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource( 3 )
 cell_size = Vector2( 16, 16 )
 format = 1
-tile_data = PoolIntArray( 458758, 0, 0, 458759, 4, 0, 458760, 3, 0, 458761, 1, 0, 458762, 4, 0, 458763, 3, 0, 458764, 2, 0, 458765, 1, 0, 458766, 3, 0, 458767, 2, 0, 458770, 2, 0, 458771, 4, 0, 524289, 2, 0, 524290, 3, 0, 524291, 0, 0, 524292, 2, 0 )
+tile_data = PoolIntArray( 458761, 2, 0, 458762, 0, 0, 458763, 4, 0, 458764, 2, 0, 458765, 1, 0, 458766, 3, 0, 458767, 2, 0, 458768, 2, 0, 458769, 2, 0, 458770, 2, 0, 458771, 4, 0, 589830, 0, 0, 589831, 4, 0, 589832, 1, 0, 655360, 0, 0, 655361, 4, 0, 655362, 1, 0, 655363, 0, 0 )
