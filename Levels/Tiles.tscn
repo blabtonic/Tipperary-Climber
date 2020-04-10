@@ -24,8 +24,42 @@ visible = false
 position = Vector2( 8, 8 )
 shape = SubResource( 1 )
 
-[node name="2" type="Sprite" parent="."]
+[node name="3" type="Sprite" parent="."]
 position = Vector2( 48, 63.8104 )
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 48, 0, 16, 16 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="3/StaticBody2D"]
+visible = false
+position = Vector2( 8, 8 )
+shape = SubResource( 1 )
+
+[node name="4" type="Sprite" parent="."]
+position = Vector2( 80, 63.8104 )
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 48, 0, 16, 16 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="4"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="4/StaticBody2D"]
+visible = false
+position = Vector2( 8, 8 )
+shape = SubResource( 1 )
+
+[node name="2" type="Sprite" parent="."]
+position = Vector2( 64, 63.8104 )
 texture = ExtResource( 1 )
 centered = false
 region_enabled = true
