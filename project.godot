@@ -137,6 +137,11 @@ Jump={
  ]
 }
 
+[layer_names]
+
+2d_render/layer_4="Bounce"
+2d_render/Bounce=false
+
 [locale]
 
 test="en"
