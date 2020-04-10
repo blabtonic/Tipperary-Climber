@@ -31,6 +31,7 @@ func _physics_process(delta):
 	
 	if is_on_floor():
 		if Input.is_action_just_pressed('ui_up'):
+			$JumpSound.play()
 			motion.y = JUMP_HEIGHT
 		if friction == true:
 			#Linearly interpolates between two values by a normalized value lerp()

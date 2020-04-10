@@ -7,6 +7,7 @@
 [ext_resource path="res://Assets/Player/Lucky/1_run.png" type="Texture" id=5]
 [ext_resource path="res://Assets/Player/Lucky/0_jump_fall.png" type="Texture" id=6]
 [ext_resource path="res://Assets/Player/Lucky/0_run.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Sounds/jump.wav" type="AudioStream" id=8]
 [ext_resource path="res://Assets/Player/Lucky/1_idle.png" type="Texture" id=9]
 
 [sub_resource type="SpriteFrames" id=1]
@@ -14,6 +15,11 @@ animations = [ {
 "frames": [ ExtResource( 6 ) ],
 "loop": true,
 "name": "Fall",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "Jump",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 9 ), ExtResource( 7 ), ExtResource( 9 ), ExtResource( 5 ) ],
@@ -25,18 +31,11 @@ animations = [ {
 "loop": true,
 "name": "Idle",
 "speed": 5.0
-}, {
-"frames": [ ExtResource( 4 ) ],
-"loop": true,
-"name": "Jump",
-"speed": 5.0
 } ]
 
 [sub_resource type="CapsuleShape2D" id=2]
 radius = 3.90322
 height = 10.6638
-
-[sub_resource type="AudioStreamSample" id=3]
 
 [node name="World" type="Node"]
 
@@ -57,8 +56,8 @@ animation = "Fall"
 position = Vector2( 2.01653, -1.9888 )
 shape = SubResource( 2 )
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Player"]
-stream = SubResource( 3 )
+[node name="JumpSound" type="AudioStreamPlayer2D" parent="Player"]
+stream = ExtResource( 8 )
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource( 3 )
