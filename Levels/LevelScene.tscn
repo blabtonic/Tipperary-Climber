@@ -1,25 +1,50 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=12 format=2]
 
-[ext_resource path="res://icon.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Player/Lucky/0_idle.png" type="Texture" id=1]
 [ext_resource path="res://Levels/Player.gd" type="Script" id=2]
 [ext_resource path="res://Assets/TileMap/Platform_1.tres" type="TileSet" id=3]
+[ext_resource path="res://Assets/Player/Lucky/0_jump.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Player/Lucky/1_run.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Player/Lucky/0_jump_fall.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Player/Lucky/0_run.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Player/Lucky/0_jump_start.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Player/Lucky/1_idle.png" type="Texture" id=9]
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 9 ), ExtResource( 8 ), ExtResource( 4 ), ExtResource( 6 ), ExtResource( 8 ) ],
+"loop": true,
+"name": "Jump",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 9 ), ExtResource( 7 ), ExtResource( 9 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "Run",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 1 ) ],
+"loop": true,
+"name": "Idle",
+"speed": 5.0
+} ]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 14.9961, 15.7834 )
+extents = Vector2( 4.79263, 7.6116 )
 
 [node name="World" type="Node"]
 
 [node name="Player" type="KinematicBody2D" parent="."]
-position = Vector2( 47.4316, 48.5347 )
+position = Vector2( 110.568, 104.145 )
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Sprite" type="Sprite" parent="Player"]
+[node name="Sprite" type="AnimatedSprite" parent="Player"]
 position = Vector2( 0, 9.53674e-07 )
 scale = Vector2( 0.484354, 0.494133 )
-texture = ExtResource( 1 )
+frames = SubResource( 2 )
+animation = "Idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
 shape = SubResource( 1 )

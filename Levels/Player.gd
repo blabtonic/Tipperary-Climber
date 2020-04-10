@@ -15,8 +15,10 @@ func _physics_process(delta):
 	# Player Movement
 	if Input.is_action_pressed('ui_right'):
 		motion.x = 100
+		$Sprite.flip_h = false
 	elif Input.is_action_pressed('ui_left'):
 		motion.x = -100
+		$Sprite.flip_h = true
 	else:
 		motion.x = 0
 	# Jump added
