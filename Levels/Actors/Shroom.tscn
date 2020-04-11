@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Assets/BackGround/shroom_idle.png" type="Texture" id=1]
 [ext_resource path="res://Levels/Actors/Shroom.gd" type="Script" id=2]
 [ext_resource path="res://Assets/BackGround/shroom_finish.png" type="Texture" id=3]
 [ext_resource path="res://Assets/BackGround/shroom_start.png" type="Texture" id=4]
+[ext_resource path="res://Levels/BounceArea.tscn" type="PackedScene" id=5]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -14,6 +15,8 @@ animations = [ {
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
+
+[sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 9.12309, 9.95661 )
 
 [node name="Shroom" type="KinematicBody2D"]
@@ -25,6 +28,12 @@ animation = "Bounce"
 frame = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 position = Vector2( 0, 1.49159 )
 shape = SubResource( 2 )
+
+[node name="BounceArea" parent="." instance=ExtResource( 5 )]
+
+[node name="BounceCollision" type="CollisionShape2D" parent="BounceArea"]
+visible = false
+position = Vector2( 0, 1.49159 )
+shape = SubResource( 3 )
