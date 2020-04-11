@@ -40,7 +40,7 @@ window/stretch/aspect="keep_height"
 
 [editor_plugins]
 
-enabled=PoolStringArray( "github-integration" )
+enabled=PoolStringArray(  )
 
 [importer_defaults]
 
@@ -145,6 +145,7 @@ Jump={
 
 [layer_names]
 
+2d_physics/layer_5="Coins"
 2d_render/Bounce=false
 
 [locale]

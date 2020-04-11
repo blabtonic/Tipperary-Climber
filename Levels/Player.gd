@@ -58,5 +58,6 @@ func _check_bounce(delta):
 			if raycast.is_colliding() && raycast.get_collision_normal() == Vector2.UP:
 				motion.y = (raycast.get_collision_point() - raycast.global_position - 
 				Vector2.DOWN).y / delta * BOUNCER
+				
 				raycast.get_collider().entity.call_deferred('bouncing', self)
 				break
