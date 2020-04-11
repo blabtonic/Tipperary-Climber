@@ -1,12 +1,14 @@
 
 ### Godot ###
 
+.github/
 # Godot-specific ignores
 *.import
 .import/
 export.cfg
 export_presets.cfg
 *.log
+addons/
 
 # Mono-specific ignores
 .mono/
