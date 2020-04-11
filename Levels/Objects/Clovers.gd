@@ -1,6 +1,6 @@
 extends Area2D
 
+onready var collect_animation = $AnimationPlayer
 
-func _process(delta):
-	if Input.is_action_pressed('ui_right'):
-		$AnimationPlayer.play('Clover_Collect')
+func _on_Clover_body_entered(body):
+	collect_animation.play('fade_out')
