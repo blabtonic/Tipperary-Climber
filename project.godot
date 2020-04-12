@@ -148,6 +148,7 @@ Jump={
 2d_physics/layer_1="world"
 2d_physics/layer_2="player"
 2d_physics/layer_3="coins"
+2d_physics/layer_4="bounce"
 2d_render/Bounce=false
 
 [locale]
