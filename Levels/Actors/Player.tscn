@@ -1,0 +1,84 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://Levels/Actors/Player.gd" type="Script" id=1]
+[ext_resource path="res://Assets/BackGround/Background.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Sounds/jump.wav" type="AudioStream" id=3]
+[ext_resource path="res://Assets/Player/Lucky/0_run.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Player/Lucky/0_jump_fall.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Player/Lucky/1_run.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Player/Lucky/0_jump.png" type="Texture" id=7]
+[ext_resource path="res://Assets/BackGround/Forrest_Midground.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Player/Lucky/0_idle.png" type="Texture" id=9]
+[ext_resource path="res://Assets/BackGround/Forrest_Foreground.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Player/Lucky/1_idle.png" type="Texture" id=11]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 7 ) ],
+"loop": true,
+"name": "Jump",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ) ],
+"loop": true,
+"name": "Fall",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 11 ), ExtResource( 4 ), ExtResource( 11 ), ExtResource( 6 ) ],
+"loop": true,
+"name": "Run",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 9 ) ],
+"loop": true,
+"name": "Idle",
+"speed": 5.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 3.90322
+height = 10.6638
+
+[node name="Player" type="KinematicBody2D"]
+position = Vector2( 34.0723, 101.054 )
+collision_layer = 2
+script = ExtResource( 1 )
+
+[node name="Sprite" type="AnimatedSprite" parent="."]
+position = Vector2( 1.90261, -2.61609 )
+scale = Vector2( 0.630709, 0.657639 )
+frames = SubResource( 1 )
+animation = "Fall"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 2.01653, -1.9888 )
+shape = SubResource( 2 )
+
+[node name="JumpSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 3 )
+volume_db = -10.783
+
+[node name="BounceRayCast" type="Node2D" parent="."]
+
+[node name="RayCast2D" type="RayCast2D" parent="BounceRayCast"]
+position = Vector2( 0, 7 )
+cast_to = Vector2( 0, 4 )
+collision_mask = 8
+collide_with_areas = true
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="Background" type="Sprite" parent="ParallaxBackground"]
+scale = Vector2( 0.844081, 1 )
+texture = ExtResource( 2 )
+centered = false
+
+[node name="Forrest_Midground" type="Sprite" parent="ParallaxBackground"]
+scale = Vector2( 0.844081, 1 )
+texture = ExtResource( 8 )
+centered = false
+
+[node name="Forrest_Foreground" type="Sprite" parent="ParallaxBackground"]
+scale = Vector2( 0.844081, 1 )
+texture = ExtResource( 10 )
+centered = false
