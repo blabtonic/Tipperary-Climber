@@ -8,5 +8,6 @@ var velocity = Vector2()
 onready var animation = get_node('Sprite')
 
 func _ready():
+	#$BounceSound.play()
 	#need signal
 	pass

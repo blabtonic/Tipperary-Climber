@@ -5,7 +5,7 @@ const ACCLELERATION = 60
 const GRAVITY = 15
 const MAX_SPEED = 85
 const JUMP_HEIGHT = -300
-const BOUNCER = 6 # need to look into bounce logic
+const BOUNCER = 8 # need to look into bounce logic
 
 var motion = Vector2()
 onready var bounce_raycasts = $BounceRayCast
@@ -60,4 +60,5 @@ func _check_bounce(delta):
 				Vector2.DOWN).y / delta * BOUNCER
 				
 				raycast.get_collider().entity.call_deferred('bouncing', self)
+				$BounceSound.play()
 				break

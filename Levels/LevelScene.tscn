@@ -13,10 +13,28 @@
 tile_set = ExtResource( 3 )
 cell_size = Vector2( 16, 16 )
 format = 1
-tile_data = PoolIntArray( 458761, 2, 0, 458762, 0, 0, 458763, 4, 0, 458764, 2, 0, 458765, 1, 0, 458766, 3, 0, 458767, 2, 0, 458768, 2, 0, 458769, 2, 0, 458770, 2, 0, 458771, 4, 0, 589830, 0, 0, 589831, 4, 0, 589832, 1, 0, 655360, 0, 0, 655361, 4, 0, 655362, 1, 0, 655363, 0, 0 )
+tile_data = PoolIntArray( -458739, 3, 0, -458738, 1, 0, -262136, 4, 0, -262133, 3, 0, -262132, 0, 0, -65522, 0, 0, -65521, 0, 0, -65520, 1, 0, 131083, 4, 0, 131084, 1, 0, 131085, 3, 0, 131089, 3, 0, 196622, 3, 0, 262160, 3, 0, 458761, 2, 0, 458762, 0, 0, 458763, 4, 0, 458764, 2, 0, 458765, 1, 0, 458766, 3, 0, 458767, 2, 0, 458768, 2, 0, 458769, 2, 0, 458770, 2, 0, 458771, 4, 0, 589830, 0, 0, 589831, 4, 0, 589832, 1, 0, 655360, 0, 0, 655361, 4, 0, 655362, 1, 0, 655363, 0, 0 )
 
 [node name="Shroom" parent="." instance=ExtResource( 10 )]
 position = Vector2( 118.008, 132.06 )
 
+[node name="Shroom4" parent="." instance=ExtResource( 10 )]
+position = Vector2( 238.529, -24.3236 )
+
+[node name="Shroom3" parent="." instance=ExtResource( 10 )]
+position = Vector2( 193.732, 22.9173 )
+
+[node name="Shroom2" parent="." instance=ExtResource( 10 )]
+position = Vector2( 209.232, 101.054 )
+
 [node name="Clover" parent="." instance=ExtResource( 14 )]
 position = Vector2( 172.434, 99.0652 )
+
+[node name="Clover2" parent="." instance=ExtResource( 14 )]
+position = Vector2( 118.008, 53.538 )
+
+[node name="Clover3" parent="." instance=ExtResource( 14 )]
+position = Vector2( 117.511, 70.7452 )
+
+[node name="Clover4" parent="." instance=ExtResource( 14 )]
+position = Vector2( 118.008, 87.9157 )
