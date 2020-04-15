@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Levels/Actors/Player.gd" type="Script" id=1]
 [ext_resource path="res://Assets/BackGround/Background.png" type="Texture" id=2]
@@ -12,17 +12,13 @@
 [ext_resource path="res://Assets/BackGround/Forrest_Foreground.png" type="Texture" id=10]
 [ext_resource path="res://Assets/Player/Lucky/1_idle.png" type="Texture" id=11]
 [ext_resource path="res://Assets/Sounds/bounce.wav" type="AudioStream" id=12]
+[ext_resource path="res://Levels/Actors/AutoScroll.gd" type="Script" id=13]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
 "frames": [ ExtResource( 7 ) ],
 "loop": true,
 "name": "Jump",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 5 ) ],
-"loop": true,
-"name": "Fall",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 11 ), ExtResource( 4 ), ExtResource( 11 ), ExtResource( 6 ) ],
@@ -33,6 +29,11 @@ animations = [ {
 "frames": [ ExtResource( 9 ) ],
 "loop": true,
 "name": "Idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ) ],
+"loop": true,
+"name": "Fall",
 "speed": 5.0
 } ]
 
@@ -86,6 +87,8 @@ centered = false
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
+script = ExtResource( 13 )
+SCROLL_SPEED = 5
 
 [node name="BounceSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 12 )
