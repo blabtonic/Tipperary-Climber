@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Levels/Actors/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Levels/Objects/PlayerScore.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Assets/TileMap/Platform_1.tres" type="TileSet" id=3]
 [ext_resource path="res://Levels/Objects/Shroom.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Levels/Objects/Clovers.tscn" type="PackedScene" id=14]
@@ -27,17 +28,36 @@ position = Vector2( 193.732, 22.9173 )
 [node name="Shroom2" parent="." instance=ExtResource( 10 )]
 position = Vector2( 300.337, 101.054 )
 
-[node name="Clover" parent="." instance=ExtResource( 14 )]
+[node name="Clover0" parent="." instance=ExtResource( 14 )]
 position = Vector2( 172.434, 99.0652 )
 
-[node name="Clover5" parent="." instance=ExtResource( 14 )]
-position = Vector2( 193.732, -52.669 )
+[node name="Clover1" parent="." instance=ExtResource( 14 )]
+position = Vector2( 118.008, 108.96 )
 
 [node name="Clover2" parent="." instance=ExtResource( 14 )]
-position = Vector2( 118.008, 53.538 )
+position = Vector2( 118.008, 87.9157 )
 
 [node name="Clover3" parent="." instance=ExtResource( 14 )]
-position = Vector2( 117.511, 70.7452 )
+position = Vector2( 118.008, 66.4583 )
 
 [node name="Clover4" parent="." instance=ExtResource( 14 )]
-position = Vector2( 118.008, 87.9157 )
+position = Vector2( 193.732, -12.8236 )
+
+[node name="Clover5" parent="." instance=ExtResource( 14 )]
+position = Vector2( 238.529, -46.7781 )
+
+[node name="Clover6" parent="." instance=ExtResource( 14 )]
+position = Vector2( 270.381, -73.5114 )
+
+[node name="Clover7" parent="." instance=ExtResource( 14 )]
+position = Vector2( 118.008, -74.6052 )
+
+[node name="UI" parent="." instance=ExtResource( 2 )]
+[connection signal="body_entered" from="Clover0" to="Player" method="_on_Clover_body_entered"]
+[connection signal="body_entered" from="Clover1" to="Player" method="_on_Clover_body_entered"]
+[connection signal="body_entered" from="Clover2" to="Player" method="_on_Clover_body_entered"]
+[connection signal="body_entered" from="Clover3" to="Player" method="_on_Clover_body_entered"]
+[connection signal="body_entered" from="Clover4" to="Player" method="_on_Clover_body_entered"]
+[connection signal="body_entered" from="Clover5" to="Player" method="_on_Clover_body_entered"]
+[connection signal="body_entered" from="Clover6" to="Player" method="_on_Clover_body_entered"]
+[connection signal="body_entered" from="Clover7" to="Player" method="_on_Clover_body_entered"]

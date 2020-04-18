@@ -9,11 +9,15 @@ const BOUNCER = 8 # need to look into bounce logic
 
 var motion = Vector2()
 onready var bounce_raycasts = $BounceRayCast
-
+var score = 0
 
 func _physics_process(delta):
 	# Gravity
 	motion.y += GRAVITY
+	
+	# Score Tracker
+	var PlayerScoreNode = get_parent().get_node('UI/Control/RichTextLabel')
+	PlayerScoreNode.text = str(score)
 	
 	# Friction
 	var friction = false
@@ -30,6 +34,7 @@ func _physics_process(delta):
 	else:
 		$Sprite.play('Idle')
 		friction = true
+	
 	
 	# Jumping Physics
 	if is_on_floor():
@@ -58,7 +63,9 @@ func _check_bounce(delta):
 			if raycast.is_colliding() && raycast.get_collision_normal() == Vector2.UP:
 				motion.y = (raycast.get_collision_point() - raycast.global_position - 
 				Vector2.DOWN).y / delta * BOUNCER
-				
 				raycast.get_collider().entity.call_deferred('bouncing', self)
 				$BounceSound.play()
 				break
+
+func _on_Clover_body_entered(body):
+	score += 1

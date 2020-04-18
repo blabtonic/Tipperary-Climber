@@ -16,24 +16,24 @@
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 7 ) ],
-"loop": true,
-"name": "Jump",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 11 ), ExtResource( 4 ), ExtResource( 11 ), ExtResource( 6 ) ],
-"loop": true,
-"name": "Run",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 9 ) ],
 "loop": true,
 "name": "Idle",
 "speed": 5.0
 }, {
+"frames": [ ExtResource( 7 ) ],
+"loop": true,
+"name": "Jump",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 5 ) ],
 "loop": true,
 "name": "Fall",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 11 ), ExtResource( 4 ), ExtResource( 11 ), ExtResource( 6 ) ],
+"loop": true,
+"name": "Run",
 "speed": 5.0
 } ]
 
@@ -88,7 +88,7 @@ centered = false
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
 script = ExtResource( 13 )
-SCROLL_SPEED = 5
+SCROLL_SPEED = 6
 
 [node name="BounceSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 12 )
