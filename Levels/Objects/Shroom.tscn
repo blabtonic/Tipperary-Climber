@@ -9,7 +9,7 @@
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
 "frames": [ ExtResource( 5 ), ExtResource( 3 ), ExtResource( 2 ), ExtResource( 5 ) ],
-"loop": true,
+"loop": false,
 "name": "Bounce",
 "speed": 11.0
 } ]
@@ -31,6 +31,7 @@ frames = SubResource( 1 )
 animation = "Bounce"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2( 0, 1.49159 )
 shape = SubResource( 2 )
 
